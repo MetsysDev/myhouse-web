@@ -1,0 +1,30 @@
+/* Mudar fonte cor de fundo */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,800;1,600;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #fff;
+    background: #ebf2f5;
+}
+
+body, input, button, textarea {
+    font: 600 18px 'Nunito', sans-serif;
+}
+
+.btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background .2s;
+}
