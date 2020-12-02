@@ -1,6 +1,8 @@
 #container-controls {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    column-gap: 10px;
+    row-gap: 10px;
 }
 #container-controls .control {
     width: 100px;
@@ -14,8 +16,6 @@
     border-radius: 7px;
     box-shadow: 5px 5px 18px 0px #797979;
     background: #fff;
-
-    margin: 10px;
     
     cursor: pointer;
 }

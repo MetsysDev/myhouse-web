@@ -4,11 +4,11 @@ import {FaRegLightbulb} from 'react-icons/fa';
 import socketIOClient from "socket.io-client";
 
 const ENDPOINT = "https://myhouse-server.herokuapp.com/";
+const socket = socketIOClient(ENDPOINT);
 
 function BtnSocket(props) {
   const [response, setResponse] = useState("");
 
-  const socket = socketIOClient(ENDPOINT);
   const [color, setColor] = useState('#000');
   const turnLight = function (props) {
     socket.emit('comand-house', {
@@ -21,7 +21,8 @@ function BtnSocket(props) {
       if (typeof(data) == 'object') {
         switch (data.comand) {
           case 'luz':
-            setColor(color != '#000'? '#000' : '#4CAF50');
+            let state = data.state || 0; // state representa o status de ligado ou desligado para o ultimo que se conectar
+            setColor(color != '#000' && state == 0? '#000' : '#4CAF50');
             break;
         }
         

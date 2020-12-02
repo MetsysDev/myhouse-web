@@ -16,7 +16,7 @@ function Controls() {
       <BtnSocket/>
 
       <div className="control">
-        <Link to='/home'>
+        <Link>
           <FiWind size="24" color="#000"/>
         </Link>
         <span>
